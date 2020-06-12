@@ -26,7 +26,7 @@ function parseMetastring(metastring) {
       result.focus = arg
     } else {
       const [key, value] = arg.split(/=(.*)/)
-      result[key] = { value }
+      result[key] = value
     }
   })
   return result

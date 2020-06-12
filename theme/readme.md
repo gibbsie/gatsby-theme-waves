@@ -1,15 +1,17 @@
 # Gatsby Theme Waves
 
-Add a section with a sticky column that changes as you scroll:
+> Still experimental but you can give it a try
+
+Bring scrollytelling to your mdx. Animate code, images, charts, maps and more as you scroll.
 
 <div align="center">
-<a href="https://gatsby-theme-waves.netlify.com/blog/post">
-<img alt="gatsby waves demo" src="https://user-images.githubusercontent.com/1911623/61620586-6bb7cb80-ac71-11e9-9a78-ae8b95d164a9.gif" />
+<a href="https://waves.pomb.us/blog/post">
+<img alt="gatsby waves demo" src="https://user-images.githubusercontent.com/1911623/62062600-971a5780-b229-11e9-9c13-cd6a265594d1.gif" />
 </a>
-<div><a href="https://gatsby-theme-waves.netlify.com/blog/post">See the live demo</a></div>
+<div><a href="https://waves.pomb.us/">See the live demo</a></div>
 </div>
 
-Use it from MDX combining code and markdown:
+The MDX looks like this:
 
 ````md
 import { CodeWave } from "gatsby-theme-waves"
@@ -102,6 +104,8 @@ You need a Gatsby site with MDX. For example, this is how you add gatsby-theme-w
     </CodeWave>
     ````
 
+Your set up should look like [this example](https://github.com/pomber/gatsby-theme-waves/tree/master/blog-demo).
+
 ### Code Blocks
 
 By default the lines that changed between two consecutive code blocks will be highlighted. You can change it to highlihgt the line (and columns) you want:
@@ -122,4 +126,5 @@ By default the lines that changed between two consecutive code blocks will be hi
 
 - Import code from files
 - Better custom code syntax highligthing using theme-ui
+- More waves
 - More docs

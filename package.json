@@ -3,6 +3,7 @@
   "workspaces": [
     "theme",
     "demo",
-    "blog-demo"
+    "blog-demo",
+    "rehype-waves"
   ]
 }

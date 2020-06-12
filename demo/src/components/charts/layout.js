@@ -4,6 +4,7 @@ import { roboto } from "@theme-ui/presets"
 import { Global } from "@emotion/core"
 
 import Header from "../header"
+import image from "../../pages/media/chart.png"
 
 import sidebarVariant from "./waves-variant"
 import deepmerge from "deepmerge"
@@ -34,7 +35,11 @@ export default props => (
   <ThemeProvider theme={theme}>
     <Styled.root>
       <Global styles={{ body: { overflowX: "hidden", margin: 0 } }} />
-      <Header codeUrl="https://github.com/pomber/gatsby-theme-waves/tree/master/demo/src/pages/charts" />
+      <Header
+        codeUrl="https://github.com/pomber/gatsby-theme-waves/tree/master/demo/src/pages/charts"
+        title="Chart Wave"
+        image={image}
+      />
       <div sx={{ display: "flex" }}>
         <div sx={{ width: ["100%", "60vw"] }}>
           <Container>{props.children}</Container>

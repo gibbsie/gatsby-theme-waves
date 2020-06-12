@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, useThemeUI } from "theme-ui"
 import React from "react"
-import useSpring from "../stuff/use-spring"
+import { useSpring } from "use-spring"
 
 function getProgress(scroller, focusPoint) {
   const children = scroller.childNodes
@@ -53,12 +53,16 @@ function Wave({
   variant = "default",
   columnComponents = [],
   childrenToStepColumns,
+  ...rest
 }) {
   const ref = React.useRef()
   const currentStep = useCurrentStep(ref, variant)
-  const progress = useSpring({
-    target: currentStep,
-    round: p => Math.round(p * 100) / 100,
+
+  const [progress] = useSpring(currentStep, {
+    decimals: 3,
+    stiffness: 80,
+    damping: 48,
+    mass: 8,
   })
 
   const columns = React.useMemo(() => {
@@ -77,6 +81,7 @@ function Wave({
             progress={progress}
             variant={variant}
             currentStep={currentStep}
+            {...rest}
           />
         )
       })}

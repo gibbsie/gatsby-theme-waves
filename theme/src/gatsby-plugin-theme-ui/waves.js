@@ -1,6 +1,3 @@
-// import { codeThemes } from "gatsby-theme-waves";
-import * as codeThemes from "code-surfer/dist/standalone.esm"
-
 export default {
   default: {
     Wave: {
@@ -49,11 +46,5 @@ export default {
     // 0.5 selects the step that is at half the screen height
     // 0.7 the step that is at 70% the screen height
     focus: [0.7, 0.5],
-    theme: {
-      // keys should be the same as the color modes from theme-ui
-      // https://theme-ui.com/color-modes
-      default: codeThemes.nightOwl,
-      dark: codeThemes.vsDark,
-    },
   },
 }

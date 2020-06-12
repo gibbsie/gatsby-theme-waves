@@ -5,6 +5,7 @@ import wavesRoot from "gatsby-theme-waves/src/gatsby-plugin-theme-ui"
 import images from "./waves-variant"
 
 import Header from "../header"
+import image from "../../pages/media/image.png"
 
 const theme = {
   colors: {
@@ -32,7 +33,11 @@ const theme = {
 export default props => (
   <ThemeProvider theme={theme}>
     <Styled.root>
-      <Header codeUrl="https://github.com/pomber/gatsby-theme-waves/tree/master/demo/src/pages/images" />
+      <Header
+        codeUrl="https://github.com/pomber/gatsby-theme-waves/tree/master/demo/src/pages/images"
+        title="Image Wave"
+        image={image}
+      />
       <Container>{props.children}</Container>
     </Styled.root>
   </ThemeProvider>

@@ -10,8 +10,11 @@ import imagesWebm from "./media/images.webm"
 import imagesMp4 from "./media/images.mp4"
 import mapsWebm from "./media/maps.webm"
 import mapsMp4 from "./media/maps.mp4"
-
+import deckWebm from "./media/deck.webm"
+import deckMp4 from "./media/deck.mp4"
+import image from "./media/home.jpg"
 import { Link } from "gatsby"
+import { Helmet } from "react-helmet"
 
 const demos = [
   {
@@ -19,6 +22,18 @@ const demos = [
     link: "/blog/post",
     webmSrc: codeWebm,
     mp4Src: codeMp4,
+  },
+  {
+    title: "Maps Wave",
+    webmSrc: mapsWebm,
+    mp4Src: mapsMp4,
+    link: "/maps",
+  },
+  {
+    title: "Deck Wave",
+    webmSrc: deckWebm,
+    mp4Src: deckMp4,
+    link: "/deck",
   },
   {
     title: "Image Wave",
@@ -32,12 +47,6 @@ const demos = [
     mp4Src: chartsMp4,
     link: "/charts",
   },
-  {
-    title: "Maps Wave",
-    webmSrc: mapsWebm,
-    mp4Src: mapsMp4,
-    link: "/maps",
-  },
 ]
 
 const theme = {
@@ -48,6 +57,18 @@ const theme = {
 export default () => {
   return (
     <ThemeProvider theme={theme}>
+      <Helmet>
+        <title>Gatsby Theme Waves Demos</title>
+        <meta
+          name="description"
+          content="Bring scrollytelling to your mdx. Animate code, images, charts, maps and more as you scroll."
+        />
+        <meta name="image" content={image} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`Gatsby Theme Waves Demos`} />
+        <meta name="twitter:image" content={image} />
+        <meta name="twitter:creator" content="pomber" />
+      </Helmet>
       <Global
         styles={{ body: { background: "linear-gradient(#f1f1f1, #ddd)" } }}
       />
@@ -104,7 +125,7 @@ function Demo({ title, webmSrc, mp4Src, link, big }) {
         gridColumnStart: big && ["span 1", "span 2"],
       }}
     >
-      <Link to={link}>
+      <Styled.a href={link}>
         <div
           sx={{
             position: "relative",
@@ -148,7 +169,7 @@ function Demo({ title, webmSrc, mp4Src, link, big }) {
             </Styled.h2>
           </div>
         </div>
-      </Link>
+      </Styled.a>
     </div>
   )
 }

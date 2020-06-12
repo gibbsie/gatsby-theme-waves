@@ -4,6 +4,7 @@ import { roboto } from "@theme-ui/presets"
 import { Global } from "@emotion/core"
 
 import Header from "../header"
+import image from "../../pages/media/maps.png"
 
 import sidebarVariant from "./waves-variant"
 import deepmerge from "deepmerge"
@@ -37,7 +38,11 @@ export default props => (
   <ThemeProvider theme={theme}>
     <Global styles={{ body: { overfowX: "hidden", background: "#121320" } }} />
     <Styled.root>
-      <Header codeUrl="https://github.com/pomber/gatsby-theme-waves/tree/master/demo/src/pages/maps" />
+      <Header
+        codeUrl="https://github.com/pomber/gatsby-theme-waves/tree/master/demo/src/pages/maps"
+        title="Maps Wave"
+        image={image}
+      />
       {props.children}
     </Styled.root>
   </ThemeProvider>

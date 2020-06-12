@@ -1,22 +1,20 @@
 /** @jsx jsx */
-import { jsx, useThemeUI } from "theme-ui"
+import { jsx } from "theme-ui"
 import React from "react"
-import CodeSurfer from "code-surfer/dist/standalone.esm"
+import { CodeSurfer } from "@code-surfer/standalone"
 import { readStepFromElement } from "../stuff/step-reader"
 
-function CodeWave({ steps: stepElements, progress, variant }) {
+function CodeSticker({ steps: stepElements, progress, variant, parsedSteps }) {
   const steps = React.useMemo(
     () =>
-      stepElements.map(element => {
-        const parsedStep = readStepFromElement(element)
-        return parsedStep
-      }),
+      parsedSteps
+        ? undefined
+        : stepElements.map(element => {
+            const parsedStep = readStepFromElement(element)
+            return parsedStep
+          }),
     []
   )
-
-  const { colorMode, theme: themeUI } = useThemeUI()
-  const codeThemes = themeUI.styles.waves[variant].theme
-  const theme = codeThemes[colorMode] || codeThemes.default
 
   return (
     <div
@@ -31,11 +29,15 @@ function CodeWave({ steps: stepElements, progress, variant }) {
         }}
       >
         <div sx={{ variant: `styles.waves.${variant}.Sticker` }}>
-          <CodeSurfer progress={progress} steps={steps} theme={theme} />
+          <CodeSurfer
+            progress={progress}
+            steps={steps}
+            parsedSteps={parsedSteps}
+          />
         </div>
       </div>
     </div>
   )
 }
 
-export default CodeWave
+export default CodeSticker

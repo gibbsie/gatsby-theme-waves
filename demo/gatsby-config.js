@@ -29,7 +29,12 @@ module.exports = {
             },
           },
         ],
+        rehypePlugins: [require("rehype-waves")],
       },
+    },
+    {
+      resolve: "gatsby-theme-mdx-deck",
+      options: { mdx: false, basePath: "decks" },
     },
   ],
 }

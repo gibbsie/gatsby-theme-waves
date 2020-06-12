@@ -9,6 +9,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
+    "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "dependencies": {
@@ -17,18 +18,18 @@
     "@mdx-js/react": "^1.0.27",
     "@theme-ui/presets": "^0.2.15",
     "deepmerge": "^4.0.0",
-    "gatsby": "^2.13.39",
+    "gatsby": "^2.13.24",
     "gatsby-plugin-mdx": "^1.0.14",
     "gatsby-plugin-sharp": "^2.2.9",
-    "gatsby-plugin-theme-ui": "^0.2.6",
     "gatsby-remark-images": "^3.1.7",
     "gatsby-theme-blog": "^1.0.2",
+    "gatsby-theme-mdx-deck": "^3.0.7",
     "gatsby-theme-waves": "*",
     "pigeon-maps": "^0.13.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "recharts": "^1.6.2",
-    "theme-ui": "^0.2.14"
+    "rehype-waves": "*"
   },
   "devDependencies": {
     "prettier": "^1.18.2"

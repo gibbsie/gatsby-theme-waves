@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import useSpring from "../stuff/use-spring"
+import { useSpring } from "use-spring"
 
 function Scroller({ steps, currentStep, progress, variant }) {
-  const fasterProgress = useSpring({
-    target: currentStep,
-    tension: 50,
-    round: p => Math.round(p * 100) / 100,
+  const [fasterProgress] = useSpring(currentStep, {
+    decimals: 3,
+    stiffness: 52,
+    damping: 14,
+    mass: 0.1,
   })
+
   const startBorder = Math.min(fasterProgress, progress)
   const endBorder = Math.max(fasterProgress, progress)
 
